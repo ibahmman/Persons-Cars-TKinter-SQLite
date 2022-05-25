@@ -8,8 +8,6 @@ github    : ibahmman
 
 import os, sqlite3
 
-from numpy import empty
-
 
 # <----- SQLite3 Setting ----->
 def connection(file_dir = os.getcwd(), file_name = 'db.db'):
