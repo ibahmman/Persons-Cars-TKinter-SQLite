@@ -168,7 +168,7 @@ def insert_vehicle():
         # تابع به برای ما یک مقدار درست یا غلط و متن ارور را باز میگرداند
         query = insert_record(tbl_name='tbl_vehicles', v_name=txb_car_name.get(), v_pid=txb_car_person__id.get())
         if query:
-            # اگر مقدار بازگردانده شده درست بود تابع نمایش همه ی کاربر ها اجرا شود
+            # اگر مقدار بازگردانده شده درست بود تابع نمایش همه ی خودرو ها اجرا شود
             select_all_vehicles()
         elif query[0] is False:
             # اگر مقدار بازگردانده شده غلط بود ارور در مسیج باکس نمایش داده شود
@@ -186,7 +186,7 @@ def update_vehicle():
         query = update_record(tbl_name='tbl_vehicles', target_id=txb_car_id.get(), 
                             v_name=txb_car_name.get(), v_pid=txb_car_person__id.get())
         if query:
-            # اگر مقدار بازگردانده شده درست بود تابع نمایش همه ی کاربر ها اجرا شود
+            # اگر مقدار بازگردانده شده درست بود تابع نمایش همه ی خودرو ها اجرا شود
             select_all_vehicles()
         elif query[0] is False:
             # اگر مقدار بازگردانده شده غلط بود ارور در مسیج باکس نمایش داده شود
@@ -205,7 +205,7 @@ def delete_vehicle():
         # تابع به برای ما یک مقدار درست یا غلط و متن ارور را باز میگرداند
         query = delete_record(tbl_name='tbl_vehicles', target_id=txb_car_id.get())
         if query:
-            # اگر مقدار بازگردانده شده درست بود تابع نمایش همه ی کاربر ها اجرا شود
+            # اگر مقدار بازگردانده شده درست بود تابع نمایش همه ی خودرو ها اجرا شود
             select_all_vehicles()
         elif query[0] is False:
             # اگر مقدار بازگردانده شده غلط بود ارور در مسیج باکس نمایش داده شود
