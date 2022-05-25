@@ -8,6 +8,8 @@ github    : ibahmman
 
 import os, sqlite3
 
+from numpy import empty
+
 
 # <----- SQLite3 Setting ----->
 def connection(file_dir = os.getcwd(), file_name = 'db.db'):
@@ -81,10 +83,12 @@ def select_record(conn = connection(), tbl_name = None, id = None):
         curs.execute(f'SELECT * FROM {tbl_name} WHERE id = {id}')
         # دریافت تمام رکورد ها
         rows = curs.fetchall()
+        print(rows)
+        assert rows, 'مورد یافت نشد'
         curs.close()
     except AssertionError as e:
         # اگر نام تیبل به تابع ارسال نشد وارد این بخش میشود و ارور مورد نظر را باز میگرداند
-        return e
+        return False, e
     else:
         # بازگرداندن مقدار یافت شده به محل فراخانی تابع
         return rows[0]
